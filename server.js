@@ -11,9 +11,9 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
-require("./app/routing/apiRoutes")(app);
-require("./app/routing/htmlRoutes")(app);
+app.get("/home.html", function(req, res) {
+  res.json(path.join(__dirname, "/app/public/home.html"));
+});
 
 
 app.listen(PORT, function() {
