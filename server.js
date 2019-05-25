@@ -11,8 +11,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get("/home.html", function(req, res) {
-  res.json(path.join(__dirname, "/app/public/home.html"));
+app.get("/", function(req, res) {
+  res.json(path.join(__dirname, "public/home.html"));
 });
 
 
